@@ -2,11 +2,10 @@
 
 This is a Git extension for setting local name and email configuration quickly.
 
-It works by accessing a remote JSON file through a local environment variable
-to get user information. The JSON file contains a list of name and email
-addresses of GitHub users. This extension sets the name and email Git config
-settings for the nickname provided. For more context, see the
-[Applicability](#Applicability) section.
+It works by accessing a remote JSON file to get user information. The JSON file
+contains a list of name and email addresses of GitHub users. This extension sets
+the name and email Git config settings for the user provided. For more context,
+see the [Applicability](#applicability) section.
 
 
 ## Installation
@@ -46,8 +45,7 @@ The `users.json` file (or whatever you decide to call it) should have this forma
 }
 ```
 
-Once your users JSON file is at the `$GIT_IAM_USERS` address you can run this
-inside of an existing Git repository:
+Now you can run this inside of an existing Git repository:
 
 ```sh
 git iam jane
@@ -68,12 +66,12 @@ git config --list
 cat .git/config
 ```
 
-Now a `git commit` will list Jane as the dev on the commit.
+Now the next `git commit` will list Jane as the dev on the commit.
 
 
 ## Applicability
 
-This might not seem like a justifiable effort to build something that only
+This might not seem like a justifiable effort - to build something that only
 saves such few keystrokes. And most people, who are the only devs using their
 computer, rarely run these commands.
 
