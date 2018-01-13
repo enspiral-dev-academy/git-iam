@@ -3,7 +3,7 @@
 const shell = require('shelljs')
 const request = require('superagent')
 
-const alias = process.argv[2]
+const alias = process.argv[2].toLowerCase()
 const listingUrl = process.argv[3]
 
 if (!alias) {
@@ -16,7 +16,7 @@ if (!alias) {
 
 function showUsage () {
   console.info(`Usage:
-  git iam --init url
+  git-iam --init url
     Sets up the extension. The url should be the address of a JSON file.
   git iam user
     Sets the name and email config of the user based on the JSON file.`)
@@ -26,6 +26,7 @@ function setupExtension (url) {
   if (!url) return showUsage()
   shell.exec('git config --global users.url ' + url)
   shell.exec('git config --global alias.iam !git-iam')
+  console.info('URL saved - initialization complete')
 }
 
 async function configureUser (alias) {

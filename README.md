@@ -3,9 +3,10 @@
 This is a Git extension for setting local name and email configuration quickly.
 
 It works by accessing a remote JSON file to get user information. The JSON file
-contains a list of name and email addresses of GitHub users. This extension sets
-the name and email Git config settings for the user provided. For more context,
-see the [Applicability](#applicability) section.
+contains a list of name and email addresses of GitHub users. This extension
+configures the name and email config settings for the user provided in the
+current local repository. For more context, see the
+[Applicability](#applicability) section.
 
 
 ## Installation
@@ -22,7 +23,7 @@ npm install git-iam --global
 After installation:
 
 ```sh
-git-iam --init https://raw.githubusercontent.com/user/repo/branch/users.json
+git-iam --init https://raw.githubusercontent.com/org/repo/branch/users.json
 ```
 
 This command
@@ -66,7 +67,7 @@ git config --list
 cat .git/config
 ```
 
-Now the next `git commit` will list Jane as the dev on the commit.
+Now the next `git commit` in this repo will list Jane as the dev on the commit.
 
 
 ## Applicability
