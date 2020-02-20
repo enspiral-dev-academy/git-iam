@@ -9,6 +9,11 @@ current local repository. For more context, see the
 [Applicability](#applicability) section.
 
 
+## Note about v0.2.0
+
+Starting with version 0.2.0, the script also blanks out the global git config for `user.name` and `user.email`. We found some students would forget to run this script before committing and they would follow the git instructions to set the global user settings. Any future devs on that machine who also forgot to run this script before committing would unknowingly get the global settings. This change attempts to mitigate that scenario.
+
+
 ## Installation
 
 ```sh
@@ -55,6 +60,8 @@ git iam jane
 and it will have the same effect as running:
 
 ```sh
+git config --global --unset-all user.name
+git config --global --unset-all user.email
 git config user.name "Jane Dev"
 git config user.email "jane@github.email.com"
 ```
