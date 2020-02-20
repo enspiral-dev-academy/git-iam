@@ -63,7 +63,7 @@ and it will have the same effect as running:
 git config --global --unset-all user.name
 git config --global --unset-all user.email
 git config user.name "Jane Dev"
-git config user.email "jane@github.email.com"
+git config user.email "jane.dev@github.email.com"
 ```
 
 You can verify this by running:
