@@ -38,6 +38,8 @@ async function configureUser (alias) {
     const errMsg = `Error: user "${alias}" is not defined in ${url}`
     return console.error(errMsg)
   }
+  shell.exec('git config --global --unset-all user.name')
+  shell.exec('git config --global --unset-all user.email')
   shell.exec(`git config --replace-all user.name "${user.name}"`)
   shell.exec(`git config --replace-all user.email "${user.email}"`)
   console.info(`Hiya ${name}, the future commits in this repo will be yours.`)
