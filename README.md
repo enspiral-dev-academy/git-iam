@@ -26,17 +26,28 @@ npm install git-iam --global
 ## Setup
 
 After installation:
+ 
+If you don't already have a `users.json` file:
 
 ```sh
-git-iam --init https://raw.githubusercontent.com/org/repo/branch/users.json
+GH_AUTH=<GitHub personal access token> git iam --build <input path>
 ```
 
-This command
+This command builds a JSON object in the format required for `git-iam`, and outputs it to the console.
 
-* saves the user list URL to the global Git config `users.url`
-* adds the `iam` alias to the global Git config `alias.iam`
+A GitHub access token is required to retrieve user data from the GitHub API.
 
-The `users.json` file (or whatever you decide to call it) should have this format:
+The `<input path>` should point to a JSON file that has this format:
+
+```json
+{
+  "jane": "jane-on-github",
+  "joe": "joe-on-github",
+  ...
+}
+```
+
+Or feel free to skip this step and build your own. It should have this format:
 
 ```json
 {
@@ -50,6 +61,19 @@ The `users.json` file (or whatever you decide to call it) should have this forma
   }
 }
 ```
+
+Save the JSON object to a Gist, i.e. [https://raw.githubusercontent.com/org/repo/branch/users.json](#)
+
+Once you have a URL to your `users.json` file:
+
+```sh
+git-iam --init https://raw.githubusercontent.com/org/repo/branch/users.json
+```
+
+This command
+
+* saves the user list URL to the global Git config `users.url`
+* adds the `iam` alias to the global Git config `alias.iam`
 
 Now you can run this inside of an existing Git repository:
 

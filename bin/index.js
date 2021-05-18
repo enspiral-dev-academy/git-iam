@@ -21,6 +21,14 @@ if (!alias) {
 
 function showUsage () {
   console.info(`Usage:
+  GH_AUTH=<GitHub personal access token> git iam --build <input path>
+    Creates the users JSON file required for git iam, and prints it to the console.
+    The input path should point to a JSON file with the following format:
+    {
+      "jane": "jane-on-github",
+      "joe": "joe-on-github",
+      ...
+    }
   git-iam --init url
     Sets up the extension. The url should be the address of a JSON file.
   git iam user
