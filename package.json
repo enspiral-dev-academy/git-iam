@@ -11,6 +11,7 @@
     "git-iam": "bin/index.js"
   },
   "dependencies": {
+    "@octokit/rest": "^18.5.3",
     "shelljs": "^0.8.4",
     "superagent": "^6.1.0"
   }
