@@ -42,8 +42,7 @@ The `<input path>` should point to a JSON file that has this format:
 ```json
 {
   "jane": "jane-on-github",
-  "joe": "joe-on-github",
-  ...
+  "joe": "joe-on-github"
 }
 ```
 
