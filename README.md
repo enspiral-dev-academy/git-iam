@@ -22,19 +22,9 @@ yarn global add git-iam
 npm install git-iam --global
 ```
 
+## Create users.json
 
-## Setup
-
-After installation:
-
-```sh
-git-iam --init https://raw.githubusercontent.com/org/repo/branch/users.json
-```
-
-This command
-
-* saves the user list URL to the global Git config `users.url`
-* adds the `iam` alias to the global Git config `alias.iam`
+You need to create a JSON object that contains the students' GitHub information.
 
 The `users.json` file (or whatever you decide to call it) should have this format:
 
@@ -50,6 +40,40 @@ The `users.json` file (or whatever you decide to call it) should have this forma
   }
 }
 ```
+
+You can use the second part of this [script](https://github.com/dev-academy-programme/teaching-guide/tree/main/resources/scripts/add-people-to-github-org) to create the users.json. This script will automatically make a JSON object with the students' GitHub usernames as the object properties. Feel free to edit the property names.
+
+## Create Git Gist
+
+* Open up Git Gist on Github
+  - You can either use the toolseda account or one of the teacher's personal account
+* Create a new private Git Gist
+* Copy the contents of your `users.json` and put it inside your new Git Gist
+* Get the shareable link of your private Git Gist
+* Add `/raw/` to the end of the link
+
+It should look like this
+
+```sh
+https://gist.github.com/{username}/{git-gist-id}/raw/
+```
+
+## Configuration
+
+In your terminal, run
+
+```sh
+git-iam --init https://gist.github.com/{username}/{git-gist-id}/raw/
+```
+
+**Replace the link after the `--init` with your Git Gist link**
+
+This command
+
+* saves the user list URL to the global Git config `users.url`
+* adds the `iam` alias to the global Git config `alias.iam`
+
+## Using git-iam
 
 Now you can run this inside of an existing Git repository:
 
