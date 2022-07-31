@@ -41,7 +41,7 @@ The `users.json` file (or whatever you decide to call it) should have this forma
 }
 ```
 
-You can use the second part of this [script](https://github.com/dev-academy-programme/teaching-guide/tree/main/resources/scripts/add-people-to-github-org) to create the users.json. This script will automatically make a JSON object with the students' GitHub usernames as the object properties. Feel free to edit the property names.
+You can use the second part of this [script](https://github.com/dev-academy-programme/teaching-guide/blob/main/bootcamp-prep-resources/scripts/add-people-to-github-org/create-git-iam-student-file.js) to create the users.json. This script will automatically make a JSON object with the students' GitHub usernames as the object properties. Feel free to edit the property names.
 
 ## Create Git Gist
 
