@@ -14,7 +14,7 @@ if (!alias) {
   configureUser(alias)
 }
 
-function showUsage () {
+function showUsage() {
   console.info(`Usage:
   git-iam --init url
     Sets up the extension. The url should be the address of a JSON file.
@@ -22,16 +22,16 @@ function showUsage () {
     Sets the name and email config of the user based on the JSON file.`)
 }
 
-function setupExtension (url) {
+function setupExtension(url) {
   if (!url) return showUsage()
   shell.exec('git config --global users.url ' + url)
   shell.exec('git config --global alias.iam !git-iam')
   console.info('URL saved - initialization complete')
 }
 
-async function configureUser (alias) {
+async function configureUser(alias) {
   const url = getUrl()
-  const name = alias.replace(/\b\w/g, l => l.toUpperCase()) // capitalise
+  const name = alias.replace(/\b\w/g, (l) => l.toUpperCase()) // capitalise
   const users = await getUserListing(url)
   const user = users && users[alias]
   if (!user) {
@@ -45,14 +45,15 @@ async function configureUser (alias) {
   console.info(`Hiya ${name}, the future commits in this repo will be yours.`)
 }
 
-function getUrl () {
-  return shell.exec('git config --list', {silent: true})
+function getUrl() {
+  return shell
+    .exec('git config --list', { silent: true })
     .stdout.split('\n')
-    .find(i => i.includes('users.url'))
+    .find((i) => i.includes('users.url'))
     .split('=')[1]
 }
 
-async function getUserListing (url) {
+async function getUserListing(url) {
   try {
     const listing = await request.get(url)
     return JSON.parse(listing.text)
@@ -60,4 +61,3 @@ async function getUserListing (url) {
     return console.error(ex)
   }
 }
-
