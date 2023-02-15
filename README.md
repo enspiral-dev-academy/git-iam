@@ -13,13 +13,14 @@ current local repository. For more context, see the
 
 Starting with version 0.2.0, the script also blanks out the global git config for `user.name` and `user.email`. We found some students would forget to run this script before committing and they would follow the git instructions to set the global user settings. Any future devs on that machine who also forgot to run this script before committing would unknowingly get the global settings. This change attempts to mitigate that scenario.
 
+Version 1.0.2 makes a further change so that the behaviour described above only occurs if the `--on-campus` flag is used during configuration since this behaviour is not ideal for people working from their personal machines.
 
 ## Installation
 
 ```sh
-yarn global add git-iam
+yarn global add @devacademy/git-iam
 # or
-npm install git-iam --global
+npm i -g @devacademy/git-iam
 ```
 
 ## Create users.json
