@@ -1,6 +1,6 @@
 {
-  "name": "git-iam",
-  "version": "0.3.0",
+  "name": "@devacademy/git-iam",
+  "version": "1.0.0",
   "description": "Git extension for setting name and email config quickly",
   "repository": "https://github.com/enspiral-dev-academy/git-iam",
   "author": "Don Smith <don@devacademy.co.nz>",
