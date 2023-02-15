@@ -63,10 +63,16 @@ https://gist.github.com/{username}/{git-gist-id}/raw/
 In your terminal, run
 
 ```sh
+# on-campus computer
+git-iam --init https://gist.github.com/{username}/{git-gist-id}/raw/ --on-campus
+
+# online student computer
 git-iam --init https://gist.github.com/{username}/{git-gist-id}/raw/
 ```
 
 **Replace the link after the `--init` with your Git Gist link**
+
+**Note:** `--on-campus` should be used when setting up on a shared computer (this will clear the global git config when users use `git iam <name>`)
 
 This command
 
@@ -84,8 +90,13 @@ git iam jane
 and it will have the same effect as running:
 
 ```sh
+# if initialized with --on-campus only
+------
 git config --global --unset-all user.name
 git config --global --unset-all user.email
+------
+
+# always run
 git config user.name "Jane Dev"
 git config user.email "jane.dev@github.email.com"
 ```
