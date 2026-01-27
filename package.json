@@ -14,7 +14,7 @@
     "git-iam": "bin/index.js"
   },
   "dependencies": {
-    "shelljs": "^0.8.4",
-    "superagent": "^6.1.0"
+    "shelljs": "^0.10.0",
+    "superagent": "^10.3.0"
   }
 }
