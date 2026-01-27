@@ -1,6 +1,6 @@
 {
   "name": "@devacademy/git-iam",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Git extension for setting name and email config quickly",
   "repository": {
     "type": "git",
